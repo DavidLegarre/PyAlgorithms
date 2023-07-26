@@ -10,8 +10,18 @@ class MinHeap:
 
     
     def parent(self, pos):
+        # This function returns the position of the parent
         return pos//2
 
 
     def leftChild(self, pos):
         return 2 * pos
+
+    def rightChild(self, pos):
+        return (2 * pos) + 1
+
+    def isLeaf(self, pos):
+        return pos*2 > self.size
+
+    def swap(self, fpos, spos):
+        self.Heap[fpos], self.Heap[spos] = self.Heap[spos], self.Heap[fpos]
